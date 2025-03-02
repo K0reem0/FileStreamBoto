@@ -14,7 +14,7 @@ class Telegram:
 
 
 class Server:
-    BASE_URL = env.get("BASE_URL", "https://mrhj8p-8080.csb.app")
+    BASE_URL = env.get("BASE_URL", "https://telegramboto0-da4472267b99.herokuapp.com")
     BIND_ADDRESS = env.get("BIND_ADDRESS", "0.0.0.0")
     PORT = int(env.get("PORT", 8080))
 
