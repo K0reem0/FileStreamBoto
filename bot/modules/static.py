@@ -1,67 +1,73 @@
 WelcomeText = \
-"""\
+    """\
 Hi **%(first_name)s**, send me a file to instantly generate file links.
 
 **Commands:**
-/privacy - View bot's privacy policy.
-/log - Get bot's log file. (owner only)
-/help - Show this message.
+/privacy - خصوصية البوت.
+/log - سجلات البوت. (للمطور فقط)
+/help - اظهار هذه الرسالة.
 """
 
 PrivacyText = \
-"""
-**Privacy Policy**
+    """
+# **سياسة الخصوصية**
 
-**1.Data Storage:** Files you upload/send are securely saved in the bot's private Telegram channel.
+## 1. تخزين البيانات
+يتم حفظ الملفات التي تقوم بتحميلها/إرسالها بشكل آمن في القناة الخاصة للبوت على Telegram.
 
-**2.Download Links:** Links include a secret code to prevent unauthorized access.
+## 2. روابط التحميل
+تحتوي الروابط على رمز سري لمنع الوصول غير المصرح به.
 
-**3.User Control:** You can revoke links anytime using the "Revoke" button.
+## 3. التحكم بالمستخدم
+يمكنك إلغاء الروابط في أي وقت باستخدام زر "إلغاء".
 
-**4.Moderation:** The bot owner can view and delete your files if necessary.
+## 4. الإشراف
+يمكن لمالك البوت عرض وحذف ملفاتك إذا لزم الأمر.
 
-**5.Open Source:** The bot is [open source](https://github.com/TheCaduceus/FileStreamBot). Deploy your own instance for maximum privacy.
+## 5. مفتوح المصدر
+البوت [مفتوح المصدر](https://github.com/TheCaduceus/FileStreamBot). يمكنك نشر نسختك الخاصة لتحقيق أقصى قدر من الخصوصية.
 
-**6.Retention:** Files are stored until you revoke their links.
+## 6. الاحتفاظ
+يتم تخزين الملفات حتى تقوم بإلغاء روابطها.
 
-__By using this bot, you agree to this policy.__
+**باستخدام هذا البوت، فإنك توافق على هذه السياسة.**
 """
 
 FileLinksText = \
-"""
-**Download Link:**
+    """
+**رابط التحميل:**
 `%(dl_link)s`
 """
 
 MediaLinksText = \
-"""
-**Download Link:**
+    """
+**رابط التحميل:**
 `%(dl_link)s`
-**Stream Link:**
+**رابط التشغيل:**
 `%(stream_link)s`
 """
 
 InvalidQueryText = \
-"""
-Query data mismatched.
+    """
+حدث خطأ.
 """
 
 MessageNotExist = \
-"""
-File revoked or not exist.
+    """
+تم حذف الملف او ليس متوفر.
 """
 
 LinkRevokedText = \
-"""
-The link has been revoked. It may take some time for the changes to take effect.
+    """
+تم حذف الملف سيأخذ بعض الوقت يرجى الانتظار
 """
 
 InvalidPayloadText = \
-"""
-Invalid payload.
+    """
+حدث خطأ
 """
 
 UserNotInAllowedList = \
-"""
-You are not allowed to use this bot.
+    """
+ليس مسموح لك بإستخدام البوت 
 """

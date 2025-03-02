@@ -6,6 +6,7 @@ from bot.config import Telegram, Server
 from bot.modules.decorators import verify_user
 from bot.modules.static import *
 
+
 @TelegramBot.on_message(
     filters.private
     & (
@@ -31,16 +32,18 @@ async def handle_user_file(_, msg: Message):
     if (msg.document and 'video' in msg.document.mime_type) or msg.video:
         stream_link = f'{Server.BASE_URL}/stream/{file_id}?code={secret_code}'
         await msg.reply(
-            text=MediaLinksText % {'dl_link': dl_link, 'stream_link': stream_link},
+            text=MediaLinksText % {
+                'dl_link': dl_link, 'stream_link': stream_link},
             quote=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('Download', url=dl_link),
-                        InlineKeyboardButton('Stream', url=stream_link)
+                        InlineKeyboardButton('تحميل', url=dl_link),
+                        InlineKeyboardButton('مشاهدة', url=stream_link)
                     ],
                     [
-                        InlineKeyboardButton('Revoke', callback_data=f'rm_{file_id}_{secret_code}')
+                        InlineKeyboardButton(
+                            'الغاء', callback_data=f'rm_{file_id}_{secret_code}')
                     ]
                 ]
             )
@@ -53,7 +56,8 @@ async def handle_user_file(_, msg: Message):
                 [
                     [
                         InlineKeyboardButton('Download', url=dl_link),
-                        InlineKeyboardButton('Revoke', callback_data=f'rm_{file_id}_{secret_code}')
+                        InlineKeyboardButton(
+                            'Revoke', callback_data=f'rm_{file_id}_{secret_code}')
                     ]
                 ]
             )
