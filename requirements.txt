@@ -2,3 +2,4 @@ hydrogram
 tgcrypto
 quart
 uvicorn
+yt-dlp
