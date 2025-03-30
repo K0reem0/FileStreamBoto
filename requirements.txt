@@ -3,3 +3,4 @@ tgcrypto
 quart
 uvicorn
 yt-dlp
+playwright
