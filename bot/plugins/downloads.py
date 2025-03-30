@@ -5,8 +5,10 @@ import os
 import yt_dlp
 import asyncio
 from playwright.async_api import async_playwright
-import shutil
 import time
+
+# تأكد من أنك استوردت الكلاس TelegramBot بشكل صحيح
+# from bot import TelegramBot
 
 DOWNLOAD_PATH = "downloads"
 os.makedirs(DOWNLOAD_PATH, exist_ok=True)
@@ -58,7 +60,7 @@ async def scrape_video_url(page_url):
                 const potentialElements = document.querySelectorAll('[data-video-src], [data-src]');
                 for (const el of potentialElements) {
                     const src = el.getAttribute('data-video-src') || el.getAttribute('data-src');
-                    if (src && src.match(/\.(mp4|webm|mov)/)) {
+                    if (src && src.match(/\\.(mp4|webm|mov)/)) {
                         return src;
                     }
                 }
@@ -151,9 +153,9 @@ async def handle_video_link(_, msg: Message):
         
         if not success:
             await waiting_msg.edit_text("⚠️ فشل yt-dlp، جاري محاولة استخراج الفيديو مباشرة...")
-            video_url = await scrape_video_url(video_url)
+            extracted_url = await scrape_video_url(video_url)
             await waiting_msg.edit_text("🔗 تم استخراج رابط الفيديو، جاري التحميل الآن...")
-            success = await download_video_directly(video_url, output_path)
+            success = await download_video_directly(extracted_url, output_path)
             
             if not success:
                 raise Exception("فشل جميع محاولات التحميل")
